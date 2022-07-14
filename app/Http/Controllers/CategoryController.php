@@ -18,9 +18,8 @@ class CategoryController extends Controller
 
     public function store(CategoryRequest $request): RedirectResponse
     {
-        $params = $request->validated();
-    
-        Category::create($params);
+        Category::create($request->validated());
+
         return to_route('index');
     }
 }
