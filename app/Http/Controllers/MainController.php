@@ -11,8 +11,7 @@ class MainController extends Controller
 {
     public function index(): View
     {
-        $categories = Category::latest()->get()->toTree();
-
+        $categories = Category::latest()->get();
         return view('index', compact('categories'));
     }
 }
